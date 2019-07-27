@@ -32,8 +32,10 @@ print("Time since now: ",(up_t1.text))
 #Trending loop
 for i in range(1,5):
     led_yellow()
+    tmp=str(i+1)
+    title="#grid-container > ytd-video-renderer:nth-child("+tmp+")"
     wait=WebDriverWait(driver,30)
-    link=title2=wait.until(expected_conditions.element_to_be_clickable((By.CSS_SELECTOR,'#grid-container > ytd-video-renderer:nth-child(2)')))
+    link=wait.until(expected_conditions.element_to_be_clickable((By.CSS_SELECTOR,title)))
     #print(link.text)
     link.click()
     
